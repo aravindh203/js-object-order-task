@@ -3,39 +3,49 @@ const passengers = [
     id: 1,
     passengerName: "Freddie Mercury",
     isVegetarianOrVegan: false,
-    connectedFlights: 2,
+    connectedFlights: 72,
   },
   {
     id: 2,
     passengerName: "Amy Winehouse",
     isVegetarianOrVegan: true,
-    connectedFlights: 4,
+    connectedFlights: 24,
   },
     {
     id: 3,
     passengerName: "Kurt Cobain",
     isVegetarianOrVegan: true,
-    connectedFlights: 3,
+    connectedFlights: 63,
   },
      {
-    id: 3,
+    id: 4,
     passengerName: "Michael Jackson",
     isVegetarianOrVegan: true,
-    connectedFlights: 1,
+    connectedFlights: 31,
   },
 ];
+
 let a=[];
-let b=0;
-let length=passengers.length
-  for(i=length;i>0;i--){
-    for(j=0;j<length;j++){
-      if(passengers[j].connectedFlights==i){
-        a[b]=passengers[j].passengerName;
-        b++;
-      }
+let b=[];
+
+for(i=0;i<passengers.length;i++){
+  a[i]=passengers[i].connectedFlights
+}
+
+for(i=0;i<a.length;i++){
+  let c=Math.max(...a);
+  a[a.indexOf(c)]=null;
+  for(j=0;j<passengers.length;j++){
+    if(passengers[j].connectedFlights==c){
+      b[i]=passengers[j];
     }
   }
-  console.log(a);
+}
+console.log(b)
+
+
+
+
 
 
   
